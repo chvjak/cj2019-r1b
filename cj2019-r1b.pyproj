@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b62c82c6-730c-44b1-bc5a-02532acc7999</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>swordfight.py</StartupFile>
+    <StartupFile>manhattan.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
