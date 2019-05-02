@@ -5,15 +5,8 @@ def input():
 # LOCAL
 #------------------------------------------------------------------------------------------------
 
-def fair_fight_count(CHARLES_SWORDS, DALILA_SWORDS, MAX_SKILL_DIFF):
-    matching_swords  = set()
-    for c in CHARLES_SWORDS:
-        for d in DALILA_SWORDS:
-            if abs(c - d) <= MAX_SKILL_DIFF:
-                matching_swords.add((c,d))
-
-    print(matching_swords)
-    return len(matching_swords)
+def is_fair_fight(CHARLES_SWORDS, DALILA_SWORDS, MAX_SKILL_DIFF):
+    return  abs(max(CHARLES_SWORDS) - max(DALILA_SWORDS)) <= MAX_SKILL_DIFF
 
 
 import sys
@@ -27,6 +20,6 @@ for i in range(T):
 
     for j in range(SWORD_COUNT):
         for k in range(j + 1, SWORD_COUNT + 1):
-                result += fair_fight_count(CHARLES_SWORDS[j:k], DALILA_SWORDS[j:k], MAX_SKILL_DIFF)
-        
+                result += 1 if is_fair_fight(CHARLES_SWORDS[j:k], DALILA_SWORDS[j:k], MAX_SKILL_DIFF) else 0
+
     print("Case #{0}: {1} ".format(i + 1, result))
