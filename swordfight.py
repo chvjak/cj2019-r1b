@@ -35,26 +35,26 @@ class MaxPQ:
 import sys
 
 T = int(input())
-for i in range(T):
+for i in xrange(T):
     SWORD_COUNT, MAX_SKILL_DIFF =  [int(x) for x in input().strip().split(" ")]
     CHARLES_SWORDS = [int(x) for x in input().strip().split(" ")]
     DALILA_SWORDS = [int(x) for x in input().strip().split(" ")]
 
     result = 0
 
-    for win_len in range(1, SWORD_COUNT + 1):
+    for win_len in xrange(1, SWORD_COUNT + 1):
         charles_choices = MaxPQ()
         dalila_choices = MaxPQ()
         charles_items = []
         dalila_items = []
-        for pos in range(win_len - 1):
+        for pos in xrange(win_len - 1):
             ci = charles_choices.push(CHARLES_SWORDS[pos]) 
             charles_items.append(ci)
 
             di = dalila_choices.push(DALILA_SWORDS[pos]) 
             dalila_items.append(di)
 
-        for pos in range(win_len - 1, SWORD_COUNT):
+        for pos in xrange(win_len - 1, SWORD_COUNT):
             ci = charles_choices.push(CHARLES_SWORDS[pos]) 
             charles_items.append(ci)
 
@@ -68,4 +68,4 @@ for i in range(T):
             dalila_items[pos - win_len + 1].deleted = True
 
 
-    print("Case #{0}: {1} ".format(i + 1, result))
+    print "Case #{0}: {1} ".format(i + 1, result)
